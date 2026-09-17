@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="description" content="How Research Trail handles account information, learning progress, and paper conversations." />
+    <title>Privacy · Research Trail</title>
+    <style>
+      @font-face { font-family: Inter; src: url("assets/InterVariable.woff2") format("woff2"); font-style: normal; font-weight: 100 900; font-display: swap; }
+      :root { font-family: Inter, system-ui, sans-serif; color: #252636; background: #f6f6fa; font-synthesis: none; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 280px; background: radial-gradient(ellipse at 0 0, #e8e9fa, transparent 42%), radial-gradient(ellipse at 100% 25%, #f0eafa, transparent 40%); }
+      .page { max-width: 760px; margin: 0 auto; padding: 32px 28px 56px; }
+      header { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-bottom: 64px; font-size: 14px; }
+      .brand { color: #252636; font-weight: 650; text-decoration: none; }
+      a { color: #334cc5; text-underline-offset: 3px; overflow-wrap: anywhere; }
+      a:hover { text-decoration-thickness: 2px; }
+      a:focus-visible { outline: 3px solid #334cc5; outline-offset: 5px; border-radius: 2px; }
+      h1 { margin: 0 0 12px; font-size: clamp(34px, 7vw, 46px); font-weight: 600; letter-spacing: -0.055em; line-height: 1.1; }
+      .updated { margin: 0 0 30px; color: #666879; font-size: 13px; }
+      h2 { margin: 36px 0 12px; font-size: 19px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.4; }
+      p, li { font-size: 15px; line-height: 1.8; }
+      p { margin: 0 0 14px; }
+      ul { margin: 0; padding-left: 22px; }
+      li + li { margin-top: 8px; }
+      footer { margin-top: 40px; padding-top: 22px; border-top: 1px solid #dcdde8; }
+      footer p { color: #666879; font-size: 13px; }
+      @media (max-width: 480px) { .page { padding: 24px 22px 40px; } header { margin-bottom: 46px; } }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="brand" href="./">Research Trail</a>
+        <a href="./">Back to learning</a>
+      </header>
+      <main id="main">
+        <h1>Privacy</h1>
+        <p class="updated">Updated <time datetime="2026-09-17">17 September 2026</time></p>
+        <p>Research Trail is operated by Manan Parihar. This notice explains the current service. For questions or a data-deletion request, email <a href="mailto:mananparihar03@gmail.com">mananparihar03@gmail.com</a>.</p>
+
+        <section aria-labelledby="account">
+          <h2 id="account">Your account</h2>
+          <p>Google sign-in shares basic identity information with Supabase, our authentication service: your email address, name, profile image, and Google account identifier. We use this to identify your account and keep your learning progress separate from other users. The app displays your name.</p>
+          <p>Research Trail does not receive your Google password. It requests basic identity, email, and profile access—not access to Gmail or Google Drive.</p>
+        </section>
+
+        <section aria-labelledby="progress">
+          <h2 id="progress">Learning progress and browser storage</h2>
+          <p>Signed-in concept familiarity answers and prerequisite-resource checkmarks are stored in Supabase and cached in your browser to support syncing. These are self-reported learning choices, not proof of mastery.</p>
+          <p>Guest progress stays in that browser. It remains separate from account progress and is not automatically imported when you sign in. The browser also stores sign-in session information and local preferences.</p>
+          <p>This site runs under <strong>manan03.github.io</strong>. Browser storage is shared at that origin, not isolated by the <strong>/research-trail-site/</strong> path. Clearing that origin’s site data may affect other sites hosted there.</p>
+        </section>
+
+        <section aria-labelledby="tutor">
+          <h2 id="tutor">Paper conversations</h2>
+          <p>The hosted AI tutor is currently unavailable while its model connection is being configured. Once enabled, asking a question will send your question, bounded conversation history, and the paper’s curator-written guide to Groq for a model response. Google profile details and learning-progress records are not intentionally included in that model request. Do not include sensitive information in a question.</p>
+          <p>The tutor stores account- and paper-linked conversations in Supabase, keeping up to six question-and-answer pairs per conversation. Access expires after 30 minutes of inactivity. Expired records are cleaned up during later requests; expiry is not a guarantee of deletion at that time. Account-linked usage counters help enforce request limits.</p>
+        </section>
+
+        <section aria-labelledby="services">
+          <h2 id="services">Services and external links</h2>
+          <p>GitHub Pages hosts the website. Supabase provides authentication, the progress database, and the tutor backend. These providers may process technical information such as IP addresses, request details, and service logs to operate their services. Their own retention and processing practices also apply.</p>
+          <p>Paper links, embedded PDFs, videos, repositories, and other learning resources connect to external websites. Those websites receive the requests and apply their own privacy policies.</p>
+          <p>Provider notices: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://supabase.com/privacy">Supabase</a>, <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>, and <a href="https://groq.com/privacy-policy">Groq</a>.</p>
+        </section>
+
+        <section aria-labelledby="choices">
+          <h2 id="choices">Your choices</h2>
+          <ul>
+            <li>Read as a guest without creating an account.</li>
+            <li>Log out to end this browser’s signed-in session. Logout does not delete your account or saved cloud progress.</li>
+            <li>Clear this origin’s browser site data to remove local guest progress, preferences, caches, and session information. Cloud records remain.</li>
+            <li>Revoke Research Trail’s access in your Google Account’s connected-app settings. Revocation does not itself delete Research Trail data.</li>
+            <li>Request deletion of your account and associated data at <a href="mailto:mananparihar03@gmail.com">mananparihar03@gmail.com</a>. Account and cloud-progress records are retained until deletion is requested and handled. There is no automatic account-expiry schedule.</li>
+          </ul>
+        </section>
+      </main>
+      <footer><p>We will update this notice when the service’s data handling changes.</p></footer>
+    </div>
+  </body>
+</html>
